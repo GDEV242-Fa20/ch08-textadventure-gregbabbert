@@ -34,28 +34,76 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
+        Room outside, foyer, living_room, garden, shed, bathroom, secret_room, office, library, dining_room, kitchen, family_room, guest_room, master_bedroom, mysterious_hallway, evil_lair;
       
         // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        outside = new Room("outside the entrance of a verrryyyyyyy spooky mansion");
+        foyer = new Room("in the mansion's foyer, it's very dusty");
+        living_room = new Room("in the mansion's foyer, it's very dusty");
+        garden = new Room("in the mansion's foyer, it's very dusty");
+        shed = new Room("in the mansion's foyer, it's very dusty");
+        bathroom = new Room("in the mansion's foyer, it's very dusty");
+        secret_room = new Room("in the mansion's foyer, it's very dusty");
+        office = new Room("in the mansion's foyer, it's very dusty");
+        library = new Room("in the mansion's foyer, it's very dusty");
+        dining_room = new Room("in the mansion's foyer, it's very dusty");
+        kitchen = new Room("in the mansion's foyer, it's very dusty");
+        family_room = new Room("in the mansion's foyer, it's very dusty");
+        guest_room = new Room("in the mansion's foyer, it's very dusty");
+        master_bedroom = new Room("in the mansion's foyer, it's very dusty");
+        mysterious_hallway = new Room("in the mansion's foyer, it's very dusty");
+        evil_lair = new Room("in the mansion's foyer, it's very dusty");
         
         // initialise room exits
-        outside.setExit("east", theater);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
-
-        theater.setExit("west", outside);
-
-        pub.setExit("east", outside);
-
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
-
-        office.setExit("west", lab);
+        outside.setExit("north", foyer);
+        
+        foyer.setExit("north", bathroom);
+        foyer.setExit("east", dining_room);
+        foyer.setExit("south", outside);
+        foyer.setExit("west", living_room);
+        
+        living_room.setExit("north", garden);
+        living_room.setExit("west", foyer);
+        
+        garden.setExit("north", shed);
+        garden.setExit("east", office);
+        garden.setExit("south", living_room);
+        
+        shed.setExit("south", garden);
+        
+        bathroom.setExit("south", foyer);
+        bathroom.setExit("east", kitchen);
+        
+        secret_room.setExit("north", office);
+        
+        office.setExit("north", library);
+        office.setExit("east", family_room);
+        office.setExit("south", secret_room);
+        office.setExit("west", garden);
+        
+        library.setExit("south", office);
+        
+        dining_room.setExit("north", kitchen);
+        dining_room.setExit("west", foyer);
+        
+        kitchen.setExit("north", family_room);
+        kitchen.setExit("south", dining_room);
+        kitchen.setExit("west", bathroom);
+        
+        family_room.setExit("north", guest_room);
+        family_room.setExit("east", master_bedroom);
+        family_room.setExit("south", kitchen);
+        family_room.setExit("west", office);
+        
+        guest_room.setExit("south", family_room);
+        
+        master_bedroom.setExit("west", family_room);
+        master_bedroom.setExit("east", mysterious_hallway);
+        
+        mysterious_hallway.setExit("west", master_bedroom);
+        mysterious_hallway.setExit("east", evil_lair);
+        
+        evil_lair.setExit("west", mysterious_hallway);
 
         currentRoom = outside;  // start game outside
     }
