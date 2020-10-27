@@ -132,8 +132,8 @@ public class Game
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to the World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
+        System.out.println("Welcome to the Harry's Haunted Mansion!");
+        System.out.println("Harry's Haunted Mansion! is a new, creepy adventure game.");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
@@ -162,6 +162,10 @@ public class Game
             case GO:
                 goRoom(command);
                 break;
+                
+            case LOOK:
+                look();
+                break;
 
             case QUIT:
                 wantToQuit = quit(command);
@@ -179,8 +183,9 @@ public class Game
      */
     private void printHelp() 
     {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("You've come across an abandoned Mansion,");
+        System.out.println("It belonged to someone named Harry.");
+        System.out.println("Walk around and see what you can find.");
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
@@ -227,4 +232,12 @@ public class Game
             return true;  // signal that we want to quit
         }
     }
+    
+    /**
+     * This command prints out the long description of the current room.
+    */
+    private void look() {
+        System.out.println(currentRoom.getLongDescription());
+    }
+    
 }
