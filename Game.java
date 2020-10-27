@@ -166,6 +166,10 @@ public class Game
             case LOOK:
                 look();
                 break;
+                
+            case SING:
+                sing();
+                break;
 
             case QUIT:
                 wantToQuit = quit(command);
@@ -238,6 +242,13 @@ public class Game
     */
     private void look() {
         System.out.println(currentRoom.getLongDescription());
+    }
+    
+    /**
+     * This command prints out the long description of the current room.
+    */
+    private void sing() {
+        System.out.println("You just sang a song, it sounded great.");
     }
     
 }
