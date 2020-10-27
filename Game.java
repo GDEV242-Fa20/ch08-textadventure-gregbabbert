@@ -37,22 +37,22 @@ public class Game
         Room outside, foyer, living_room, garden, shed, bathroom, secret_room, office, library, dining_room, kitchen, family_room, guest_room, master_bedroom, mysterious_hallway, evil_lair;
       
         // create the rooms
-        outside = new Room("outside the entrance of a verrryyyyyyy spooky mansion");
-        foyer = new Room("in the mansion's foyer, it's very dusty");
-        living_room = new Room("in the mansion's foyer, it's very dusty");
-        garden = new Room("in the mansion's foyer, it's very dusty");
-        shed = new Room("in the mansion's foyer, it's very dusty");
-        bathroom = new Room("in the mansion's foyer, it's very dusty");
-        secret_room = new Room("in the mansion's foyer, it's very dusty");
-        office = new Room("in the mansion's foyer, it's very dusty");
-        library = new Room("in the mansion's foyer, it's very dusty");
-        dining_room = new Room("in the mansion's foyer, it's very dusty");
-        kitchen = new Room("in the mansion's foyer, it's very dusty");
-        family_room = new Room("in the mansion's foyer, it's very dusty");
-        guest_room = new Room("in the mansion's foyer, it's very dusty");
-        master_bedroom = new Room("in the mansion's foyer, it's very dusty");
-        mysterious_hallway = new Room("in the mansion's foyer, it's very dusty");
-        evil_lair = new Room("in the mansion's foyer, it's very dusty");
+        outside = new Room("You're outside the entrance of a verrryyyyyyy spooky mansion");
+        foyer = new Room("You're inside the mansion's foyer, it feels like someone's watching you...");
+        living_room = new Room("This must be the living room");
+        garden = new Room("This is the garden, it's hard to see with all the mist");
+        shed = new Room("This is the garden's tool shed, it looks like there's an axe missing...");
+        bathroom = new Room("This is the bathroom, it hasn't been cleaned in ages");
+        secret_room = new Room("Woah, this is a secret room!");
+        office = new Room("Here's the office, look at all the creepy documents");
+        library = new Room("This is the library, a lot of these books have suspicious titles");
+        dining_room = new Room("This is the dining room, it's very dark in here");
+        kitchen = new Room("This is the kitchen, there's rats everywhere!");
+        family_room = new Room("This must be the family room, the family portrait looks kin of sinister");
+        guest_room = new Room("This is the guest room, why doesn't the guest log say anyone's left?");
+        master_bedroom = new Room("This is the master bedroom, this room deosn't feel right");
+        mysterious_hallway = new Room("Here's a secret passageway! There's a bright light at the end of the tunnel...");
+        evil_lair = new Room("It's an evil lair! The ghost of the original family is there watching you.");
         
         // initialise room exits
         outside.setExit("north", foyer);
