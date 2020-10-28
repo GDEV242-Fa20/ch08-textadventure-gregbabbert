@@ -19,6 +19,8 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    private Room previousRoom;
+    
         
     /**
      * Create the game and initialise its internal map.
@@ -35,7 +37,8 @@ public class Game
     private void createRooms()
     {
         Room outside, foyer, living_room, garden, shed, bathroom, secret_room, office, library, dining_room, kitchen, family_room, guest_room, master_bedroom, mysterious_hallway, evil_lair;
-      
+        
+        
         // create the rooms
         outside = new Room("outside the entrance of a verrryyyyyyy spooky mansion");
         foyer = new Room("inside the mansion's foyer, it feels like someone's watching you..");
@@ -54,6 +57,7 @@ public class Game
         mysterious_hallway = new Room("in a secret passageway! There's a bright light at the end of the tunnel..");
         evil_lair = new Room("in an evil lair! The ghost of the original family is there watching you");
         
+        //key = new Item("This is a key to somewhere.", 5);
         // initialise room exits
         outside.setExit("north", foyer);
         
@@ -170,6 +174,10 @@ public class Game
             case SING:
                 sing();
                 break;
+                
+            case BACK:
+                back();
+                break;
 
             case QUIT:
                 wantToQuit = quit(command);
@@ -216,6 +224,7 @@ public class Game
             System.out.println("There is no door!");
         }
         else {
+            previousRoom = currentRoom;
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
         }
@@ -249,6 +258,20 @@ public class Game
     */
     private void sing() {
         System.out.println("You just sang a song, it sounded great.");
+    }
+    
+    /**
+     * This command takes you back to the room you were at before.
+    */
+    private void back() {
+        if (previousRoom == null) {
+            System.out.println("There is no previous room.");
+        }
+        else {
+            currentRoom = previousRoom;
+            System.out.println("You moved back once and are now in the previos area.");
+            System.out.println(currentRoom.getLongDescription());
+        }
     }
     
 }
