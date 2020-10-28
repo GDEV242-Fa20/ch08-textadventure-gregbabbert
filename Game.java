@@ -1,18 +1,21 @@
+
+
+import java.util.ArrayList;
 /**
- *  This class is the main class of the "World of Zuul" application. 
- *  "World of Zuul" is a very simple, text based adventure game.  Users 
- *  can walk around some scenery. That's all. It should really be extended 
- *  to make it more interesting!
+ *  This class is the main class of the "Harry's Haunted Mansion" application. 
+ *  "Harry's Haunted Mansion" is a text based adventure game.  Users can 
+ *  walk around some Harry's Haunted Mansion.
  * 
  *  To play this game, create an instance of this class and call the "play"
- *  method.
+ *  method. You can also go into the Main class and use that class' main
+ *  method to play the game.
  * 
  *  This main class creates and initialises all the others: it creates all
  *  rooms, creates the parser and starts the game.  It also evaluates and
  *  executes the commands that the parser returns.
  * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @author  Greg Babbert
+ * @version 2020.10.27
  */
 
 public class Game 
