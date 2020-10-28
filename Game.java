@@ -272,7 +272,7 @@ public class Game
         }
         else {
             currentRoom = previousRoom;
-            System.out.println("You moved back once and are now in the previos area.");
+            System.out.println("You moved back once and are now in the previous area.");
             System.out.println(currentRoom.getLongDescription());
         }
     }
